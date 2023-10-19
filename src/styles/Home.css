@@ -1,145 +1,112 @@
-.container {
-  width: 100%;
-  max-width: 1440px;
-  padding: 0 1rem;
-  margin: 0 auto;
-}
+/* App.css */
 
-.gradient-text-0 {
-  background: -webkit-linear-gradient(#bfa3da, #84309c, #c735b0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gradient-text-1 {
-  background: -webkit-linear-gradient(#a79af9, #7aa8d2);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gradient-text-2 {
-  background: -webkit-linear-gradient(#bfa3da, #743f93);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gradient-text-3 {
-  background: -webkit-linear-gradient(#c35ab1, #e9a8d9);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-  text-decoration-color: #84309c;
-}
-
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: left;
-}
-
-.connect {
-  margin-bottom: 2rem;
-}
-
-.description {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #555;
-  border-radius: 5px;
-  padding: 0.5em;
-  font-size: 1.1rem;
-}
-
-.grid {
-  display: flex;
-  justify-content: left;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  background-color: #131313;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 440px;
-  overflow: none;
-  border: none;
-}
-
-.card-text {
-  padding: 1rem;
-}
-
-.card img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 4px 4px 0 0;
-  margin-bottom: 12px;
-  border: none;
-}
-
-.card:hover,
-.card:focus,
-.card:active {
-  background-color: #272c34;
-  opacity: 80%;
-}
-
-.card h2 {
-  margin: 0 0 0.75rem 0;
-}
-
-.card p {
+/* Reset some default styles */
+* {
   margin: 0;
-  font-size: 1rem;
-  line-height: 1.75;
+  padding: 0;
+  box-sizing: border-box;
+  
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+/* Body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #51848d;
+  
 }
 
-@media (max-width: 768px) {
-  .header {
-    margin-left: 0;
-  }
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-  .title {
-    font-size: 3rem;
-    line-height: 1.15;
-  }
+/* Navigation Bar styles */
+nav {
+  background-color: #333;
+  color: rgb(57, 159, 185);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+
 }
 
-.card,
-.footer {
-  border-color: #222;
+nav ul {
+  list-style: none;
+  display: flex;
+  
+  }
+
+nav ul li {
+  margin: 0 1rem;
 }
-.logo img {
-  filter: invert(1);
+
+nav ul li a {
+  text-decoration: none;
+  color: rgb(64, 140, 181);
+  font-weight: bold;
+  margin: 10px;
 }
+
+/* Main Content styles */
+.main-content {
+  text-align: center;
+  padding: 2rem;
+  background-color: #3e7086;
+  margin: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+
+}
+
+.main-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  
+}
+
+.main-content p {
+  font-size: 1.2rem;
+  color: #5c1a3a;
+}
+
+/* Image styles */
+.blockchain-image {
+  display: block;
+  margin: 2rem auto;
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* CSS for Connect Wallet button */
+.connect-wallet-button {
+  background-color: #007BFF; /* Blue background color */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Padding around the button text */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  font-weight: bold; /* Bold text */
+  margin-left: 10px; /* Add some spacing to the left of the button */
+}
+
+.connect-wallet-button:hover {
+  background-color: #0056b3; /* Darker blue color on hover */
+}
+
+/* Add more styles for active and visited states if needed */
+
+
+/* Style anchor links in navigation menu */
+nav a {
+  text-decoration: none; /* Remove underline */
+  color: #333; /* Default text color */
+  
+}
+
+nav a:hover {
+  color: #007BFF; /* Change text color on hover */
+}
+
+nav a:active {
+  color: #0056b3; /* Change text color on click (active state) */
+}
+
+/* Add styles for visited links if needed */
+

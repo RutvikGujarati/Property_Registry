@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
-import { ThirdwebProvider } from "@thirdweb-dev/react";
+import { MetaMaskWallet, ThirdwebProvider } from "@thirdweb-dev/react";
 import "./styles/globals.css";
 
 // This is the chain your dApp will work on.
@@ -9,13 +9,20 @@ import "./styles/globals.css";
 // You can also import additional chains from `@thirdweb-dev/chains` and pass them directly.
 const activeChain = "ethereum";
 
+// const metaWallet = MetaMaskWallet({recommended: true});
+
+// metaWallet.meta.name = "FOX";
+
 const container = document.getElementById("root");
 const root = createRoot(container);
+
+
 root.render(
   <React.StrictMode>
     <ThirdwebProvider
       clientId={import.meta.env.VITE_TEMPLATE_CLIENT_ID}
       activeChain={activeChain}
+      // supportedWallets={[ metaWallet]}
     >
       <App />
     </ThirdwebProvider>
