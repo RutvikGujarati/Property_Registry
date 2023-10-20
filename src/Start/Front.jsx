@@ -28,9 +28,7 @@ const Front = () => {
          
         </ul>
       </nav>
-      <div>
-        other components
-      </div>
+      
     </div>
   );
 };
