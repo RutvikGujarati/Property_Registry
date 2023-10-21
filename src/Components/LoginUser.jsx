@@ -3,7 +3,7 @@ import Web3 from 'web3';
 import contractAbi from './LandAbi.json';
 import IpfsApi from 'ipfs-mini';
 import axios from 'axios';
-import "../styles/LoginUser.css"
+import "../styles/Loginuser.css"
 
 const LoginUser = () => {
   const [name, setName] = useState('');
