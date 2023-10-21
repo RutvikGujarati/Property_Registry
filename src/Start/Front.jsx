@@ -1,7 +1,7 @@
 import { ConnectWallet } from "@thirdweb-dev/react";
 import React from "react";
 import { Link, NavLink } from "react-router-dom/dist";
-import LoginUser from "./LoginUser";
+// import LoginUser from "../Components/LoginUser";
 
 const Front = () => {
   return (
@@ -24,11 +24,13 @@ const Front = () => {
           <li>
             <Link to="/about">About</Link>
           </li>
-          <Link to="/loginUser">{<LoginUser />}</Link>
+          {/* <Link to="/loginUser">{<LoginUser />}</Link> */}
          
         </ul>
       </nav>
-      
+      {/* <div>
+        other components
+      </div> */}
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "../styles/User.css";
 import { ConnectWallet } from "@thirdweb-dev/react";
 import land from "../land.jpg";
-import LoginUser from "./LoginUser";
+import LoginUser from "../Components/LoginUser";
 
 const User = () => {
   const connectWallet = async () => {
@@ -23,7 +23,7 @@ const User = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container1">
       <div className="login">
         <h4 className="lo">User Login</h4>
         <ConnectWallet />
