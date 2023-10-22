@@ -50,7 +50,7 @@ const LoginUser = () => {
   const apiKey = 'e9417699d08e7376e68f';
   const apiSecretKey = '238e6574edcad9dfdcbfa0f0bc3dffd7f3bf764f533a6fe737d0852266bb2f58';
 
-  const ipfs = new IpfsApi({ host: 'ipfs.pinata.cloud', port: 443, protocol: 'https' });
+//  const ipfs = new IpfsApi({ host: 'ipfs.pinata.cloud', port: 443, protocol: 'https' });
 
   const uploadDocumentToIpfs = async (document) => {
     const formData = new FormData();

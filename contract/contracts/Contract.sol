@@ -148,7 +148,7 @@ contract Land {
     }
 
     function registerUser(string memory _name, uint _age, string memory _city,string memory _aadharNumber, string memory _panNumber, string memory _document, string memory _email
-    ) public {
+    ) public {  
 
         require(!RegisteredUserMapping[msg.sender]);
 
