@@ -19,7 +19,7 @@ const Front = () => {
             <Link to="/land-inspector">Land Inspector</Link>
           </li>
           <li>
-            <Link to="/contract-owner">Contract Owner</Link>
+            <Link to="/owner">Contract Owner</Link>
           </li>
           <li>
             <Link to="/about">About</Link>

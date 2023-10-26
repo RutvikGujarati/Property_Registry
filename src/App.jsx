@@ -7,6 +7,8 @@ import LandInspector from "./Start/LandInspector"
 import ContractOwner from "./Start/ContractOwner";
 import LoginUser from "./Components/LoginUser";
 import { BrowserRouter, Route, Routes } from "react-router-dom/dist";
+import Owner from "./Start/Owner";
+import About from "./Start/About";
 // import Test from "./Components/test";
 
 export default function Home() {
@@ -17,8 +19,12 @@ export default function Home() {
 
    <Routes>
     <Route path="/User" element={<User />}/>
+    <Route path="/owner" element={<Owner />}/>
     <Route path="/" element={<Front />}/>
     <Route path="/Home" element={<Window />} />
+    <Route path="/contractOwner" element={<ContractOwner />} />
+    <Route path="/about" element={<About />} />
+
     {/* <Route path="/Test" element={<Test />} /> */}
 
     <Route path="/loginUser" element ={<LoginUser />}/>
