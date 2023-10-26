@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
-import contractAbi from '../Components/LandAbi.json';
-import "../styles/owner.css"
+import contractAbi from '../LandAbi.json';
+import "./OwnerLogin.css"
 
-const ContractOwner = () => {
+const OwnerLogin = () => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [designation, setDesignation] = useState('');
@@ -17,30 +17,30 @@ const ContractOwner = () => {
 
   const contract = new web3.eth.Contract(contractAbi, contractAddress);
 
-  useEffect(() => {
-    async function loadInspectorDetails() {
-      const accounts = await web3.eth.getAccounts();
+  // useEffect(() => {
+  //   async function loadInspectorDetails() {
+  //     const accounts = await web3.eth.getAccounts();
 
-      if (accounts.length === 0) {
-        console.error('No accounts available. Please check your MetaMask or Web3 setup.');
-        return;
-      }
+  //     if (accounts.length === 0) {
+  //       console.error('No accounts available. Please check your MetaMask or Web3 setup.');
+  //       return;
+  //     }
 
-      if (accounts[0] !== ownerAddress) {
-        console.error('You do not have permission to access this page.');
-        return;
-      }
+  //     if (accounts[0] !== ownerAddress) {
+  //       console.error('You do not have permission to access this page.');
+  //       return;
+  //     }
 
-      try {
-        const details = await contract.methods.InspectorMapping(accounts[0]).call();
-        setInspectorDetails(details);
-      } catch (error) {
-        console.error('Error loading Land Inspector details:', error);
-      }
-    }
+  //     try {
+  //       const details = await contract.methods.InspectorMapping(accounts[0]).call();
+  //       setInspectorDetails(details);
+  //     } catch (error) {
+  //       console.error('Error loading Land Inspector details:', error);
+  //     }
+  //   }
 
-    loadInspectorDetails();
-  }, [web3.eth, ownerAddress]);
+  //   loadInspectorDetails();
+  // }, [web3.eth, ownerAddress]);
 
   const addLandInspector = async () => {
     const accounts = await web3.eth.getAccounts();
@@ -90,4 +90,4 @@ const ContractOwner = () => {
   );
 };
 
-export default ContractOwner;
+export default OwnerLogin;
