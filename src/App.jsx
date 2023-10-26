@@ -7,7 +7,7 @@ import LandInspector from "./Start/LandInspector"
 import ContractOwner from "./Start/ContractOwner";
 import LoginUser from "./Components/LoginUser";
 import { BrowserRouter, Route, Routes } from "react-router-dom/dist";
-import Test from "./Components/test";
+// import Test from "./Components/test";
 
 export default function Home() {
   return (
