@@ -1,15 +1,26 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import image from "./img.jpg"
 // import { useHistory } from "react-router-dom";
 import "../styles/User.css";
 import { ConnectWallet } from "@thirdweb-dev/react";
+import { useContractRead , useContract } from "@thirdweb-dev/react";
 
 import land from "../land.jpg";
 import LoginUser from "../Components/LoginUser";
 
+const contractAddress = "0xf7E9f7309146Dcd6201A1a86b48499022b229a19";
+
 const User = () => {
   // const history = useHistory();
   const [metamaskAddress, setMetamaskAddress] = useState("");
+
+  const { contract } = useContract(contractAddress);
+  const { data, isLoading, error } = useContractRead(contract, "ReturnAllLandIncpectorList", "0x14093F94E3D9E59D1519A9ca6aA207f88005918c");
+
+  if (error) {
+    console.error("failed to read contract", error);
+  }
 
   const connectWithAddress = (event) => {
     // You can add further validation for the MetaMask address
@@ -49,11 +60,12 @@ const User = () => {
   return (
     <div className="container1">
       <div className="login">
-        <h4 className="lo">User Login</h4>
+        <img  src={image}></img>
         <ConnectWallet 
           
         />
       </div>
+      {/* <div>{isLoading ? <p>Loading...</p> : <p>user Registration: {data}</p>}</div> */}
       <div className="image-section">
         <img src={land} alt="Your Image" />
         <div className="additional-div">
