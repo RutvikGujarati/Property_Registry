@@ -63,16 +63,16 @@ const ContractOwner = () => {
         <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
       </div>
       <button className='submit-button' onClick={handleAddLandInspector}>Add Land Inspector</button>
-      {inspectorDetails && (
+      {/* {inspectorDetails && (
         <div>
           <h2>Land Inspector Details</h2>
           <p>Name: {inspectorDetails.name}</p>
           <p>Age: {inspectorDetails.age}</p>
           <p>Designation: {inspectorDetails.designation}</p>
           <p>City: {inspectorDetails.city}</p>
-          {/* Render other details as needed */}
+          Render other details as needed
         </div>
-      )}
+      )} */}
     </div>
 
     

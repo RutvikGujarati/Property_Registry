@@ -19,7 +19,7 @@ export default function Home() {
     <Route path="/User" element={<User />}/>
     <Route path="/" element={<Front />}/>
     <Route path="/Home" element={<Window />} />
-    <Route path="/Test" element={<Test />} />
+    {/* <Route path="/Test" element={<Test />} /> */}
 
     <Route path="/loginUser" element ={<LoginUser />}/>
     <Route path="/land-inspector" element={<LandInspector />}/>
