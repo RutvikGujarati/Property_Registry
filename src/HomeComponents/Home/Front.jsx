@@ -9,8 +9,11 @@ const Front = () => {
       {/* Navigation Bar */}
       <nav>
         <ul>
-          <li>
+          {/* <li>
             <Link to="/Home">Window</Link>
+          </li> */}
+          <li>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/user">User</Link>
@@ -24,12 +27,14 @@ const Front = () => {
           <li>
             <Link to="/about">About</Link>
           </li>
+          
           {/* <Link to="/loginUser">{<LoginUser />}</Link> */}
          
         </ul>
       </nav>
-      <div>
-        other components
+      <div className="main-content">
+        <h1>Welcome to Land Registration</h1>
+        <p>Effortless land registration with blockchain technology.</p>
       </div>
     </div>
   );

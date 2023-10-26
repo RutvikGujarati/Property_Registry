@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Web3 from 'web3';
-import contractAbi from './LandAbi.json';
+import contractAbi from '../../Components/LandAbi.json';
 import IpfsApi from 'ipfs-mini';
 import axios from 'axios';
-import "../styles/Loginuser.css"
+import "./registeruser.css"
 
 const LoginUser = () => {
   const [name, setName] = useState('');
