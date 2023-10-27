@@ -1,13 +1,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import image from "./img.jpg"
+import image from "../img.jpg"
+import "./User.css"
 // import { useHistory } from "react-router-dom";
-import "../styles/User.css";
+import "./User.css";
 import { ConnectWallet } from "@thirdweb-dev/react";
 import { useContractRead , useContract } from "@thirdweb-dev/react";
 
-import land from "../land.jpg";
-import LoginUser from "../Components/LoginUser";
+import land from "../../land.jpg";
+// import LoginUser from "../../Components/LoginUser";
 
 const contractAddress = "0xf7E9f7309146Dcd6201A1a86b48499022b229a19";
 const ownerAddress = "0x14093F94E3D9E59D1519A9ca6aA207f88005918c";
@@ -16,19 +17,28 @@ const User = () => {
   // const history = useHistory();
   const [metamaskAddress, setMetamaskAddress] = useState("");
 
-  const { contract } = useContract(contractAddress);
-  const { data, isLoading, error } = useContractRead(contract, "ReturnAllLandIncpectorList", "0x14093F94E3D9E59D1519A9ca6aA207f88005918c");
+  const isOwner = metamaskAddress.toLowerCase() === ownerAddress.toLowerCase();
 
-  if (error) {
-    console.error("failed to read contract", error);
-  }
+  const { contract } = useContract(contractAddress);
+
+  // const { data, isLoading, error } = useContractRead(contract, "ReturnAllLandIncpectorList", "0x14093F94E3D9E59D1519A9ca6aA207f88005918c");
+
+  // if (error) {
+  //   console.error("failed to read contract", error);
+  // }
 
   const connectWithAddress = (event) => {
     // You can add further validation for the MetaMask address
     try{
       event.preventDefault(); // Prevent the default form submission behavior
       if (metamaskAddress && isValidWalletAddress(metamaskAddress)) {
-      window.location.href = "/loginUser" // Navigate to the next page (LoginUser)
+        if(isOwner){
+          alert("Owners are not allowed to access the ContractOwner page.");
+        }
+        else{
+          window.location.href = "/loginUser" // Navigate to the next page (LoginUser)
+
+        }
     }else{
       alert("please enter correct address!")
     }}catch{
@@ -47,7 +57,10 @@ const User = () => {
 
   const connectWallet = async () => {
     try {
-      if (window.ethereum) {
+      if (isOwner) {
+        alert("Owners are not allowed to access this page.");
+      }
+      else if (window.ethereum) {
         await window.ethereum.request({ method: "eth_requestAccounts" });
         // Call the onConnect callback when the wallet is successfully connected
         window.location.href = "/loginUser";

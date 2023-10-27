@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ConnectWallet } from "@thirdweb-dev/react";
 import { useContractRead, useContract } from "@thirdweb-dev/react";
 
-import image from "./img.jpg";
+import image from "../img.jpg";
 import land from "./owner.jpg";
 // import { useHistory } from "react-router-dom";
 
