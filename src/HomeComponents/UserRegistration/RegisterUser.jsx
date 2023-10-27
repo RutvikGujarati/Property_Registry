@@ -5,9 +5,9 @@ import IpfsApi from "ipfs-mini";
 import axios from "axios";
 import "./registeruser.css";
 import { Web3Button } from "@thirdweb-dev/react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const LoginUser = () => {
+const RegisterUser = () => {
   const [User, setUser] = useState(false);
   const [userList, setUserList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +25,7 @@ const LoginUser = () => {
     return storedData ? JSON.parse(storedData) : [];
   });
 
-  // const Navigate = useNavigate();
+  const Navigate = useNavigate();
 
   // Regular expressions for input validation
   const nameRegex = /^[A-Za-z\s]+$/;
@@ -53,7 +53,7 @@ const LoginUser = () => {
     setEmail("");
   }
 
-  const contractAddress = "0xf7E9f7309146Dcd6201A1a86b48499022b229a19"; // Replace with your contract address
+  const contractAddress = "0xe8Ae8d8cDc88BD818a1065a15966Bcc0F407dD2B"; // Replace with your contract address
 
   const fetchUserList = async () => {
     setIsLoading(true);
@@ -183,7 +183,7 @@ const LoginUser = () => {
 
         {/* <button className="submit-button" onClick={handleRegistration}>Submit</button> */}
         <Web3Button
-        contractAddress="0xf7E9f7309146Dcd6201A1a86b48499022b229a19"
+        contractAddress="0xe8Ae8d8cDc88BD818a1065a15966Bcc0F407dD2B"
         contractAbi={contractAbi}
         action={(contract)=> contract.call(
           "registerUser",
@@ -201,6 +201,7 @@ const LoginUser = () => {
         onSuccess={()=>{
           resetForm();
           // setAddContact(false);
+          Navigate("/userLogin");
         }}
 
         >Register User</Web3Button>
@@ -208,7 +209,7 @@ const LoginUser = () => {
       {/* </div> */}
       <div>
         <Web3Button
-        contractAddress="0xf7E9f7309146Dcd6201A1a86b48499022b229a19"
+        contractAddress="0xe8Ae8d8cDc88BD818a1065a15966Bcc0F407dD2B"
         contractAbi={contractAbi} 
         action={fetchUserList}
         
@@ -240,7 +241,7 @@ const LoginUser = () => {
   );
 };
 
-export default LoginUser;
+export default RegisterUser;
 
 
 

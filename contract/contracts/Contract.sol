@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-contract OrgLand {
+contract RegistryLand {
     address contractOwner;
 
     constructor() {
@@ -170,6 +170,10 @@ contract OrgLand {
     function ReturnAllUserList() public view returns(address[] memory)
     {
         return allUsersList[1];
+    }
+
+    function getUserDetails() public view returns (User memory) {
+        return UserMapping[msg.sender];
     }
 
 

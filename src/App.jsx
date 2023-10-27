@@ -5,10 +5,11 @@ import User from "./HomeComponents/User/User";
 // import Window from "./HomeComponents/Window";
 import LandInspector from "./HomeComponents/LandInspector/LandInspector"
 import OwnerLogin from "./Components/OwnerLogin/OwnerLogin"
-import LoginUser from "./HomeComponents/UserRegistration/RegisterUser"
 import { BrowserRouter, Route, Routes } from "react-router-dom/dist";
 import Owner from "./HomeComponents/Owner/Owner"
 import About from "./HomeComponents/About/About"
+import UserLogin from "./Components/UserLogin/UserLogin";
+import RegisterUser from "./HomeComponents/UserRegistration/RegisterUser";
 // import Test from "./Components/test";
 
 export default function Home() {
@@ -24,10 +25,11 @@ export default function Home() {
     {/* <Route path="/Home" element={<Window />} /> */}
     <Route path="/contractOwner" element={<OwnerLogin />} />
     <Route path="/about" element={<About />} />
+    <Route path="/userLogin" element={<UserLogin />} />
 
     {/* <Route path="/Test" element={<Test />} /> */}
 
-    <Route path="/loginUser" element ={<LoginUser />}/>
+    <Route path="/RegisterUser" element ={<RegisterUser />}/>
     <Route path="/land-inspector" element={<LandInspector />}/>
     {/* <Route path="/contract-owner" element={<ContractOwner />}/> */}
    </Routes>

@@ -84,7 +84,7 @@
       {
         "type": "uint8",
         "name": "requestStatus",
-        "internalType": "enum OrgLand.reqStatus"
+        "internalType": "enum RegistryLand.reqStatus"
       },
       {
         "type": "bool",
@@ -309,6 +309,66 @@
         "type": "uint256",
         "name": "",
         "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getUserDetails",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "tuple",
+        "name": "",
+        "components": [
+          {
+            "type": "address",
+            "name": "id",
+            "internalType": "address"
+          },
+          {
+            "type": "string",
+            "name": "name",
+            "internalType": "string"
+          },
+          {
+            "type": "uint256",
+            "name": "age",
+            "internalType": "uint256"
+          },
+          {
+            "type": "string",
+            "name": "city",
+            "internalType": "string"
+          },
+          {
+            "type": "string",
+            "name": "aadharNumber",
+            "internalType": "string"
+          },
+          {
+            "type": "string",
+            "name": "panNumber",
+            "internalType": "string"
+          },
+          {
+            "type": "string",
+            "name": "document",
+            "internalType": "string"
+          },
+          {
+            "type": "string",
+            "name": "email",
+            "internalType": "string"
+          },
+          {
+            "type": "bool",
+            "name": "isUserVerified",
+            "internalType": "bool"
+          }
+        ],
+        "internalType": "struct RegistryLand.User"
       }
     ],
     "stateMutability": "view"
