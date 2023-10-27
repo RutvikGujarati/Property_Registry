@@ -1,12 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import image from "../img.jpg"
+import logo from "../estd.png"
 import "./User.css"
 // import { useHistory } from "react-router-dom";
 import "./User.css";
+// import Link from "react-router-dom/dist";
 import { ConnectWallet } from "@thirdweb-dev/react";
 import { useContractRead , useContract } from "@thirdweb-dev/react";
-
 import land from "../../land.jpg";
 // import LoginUser from "../../Components/LoginUser";
 
@@ -74,16 +75,27 @@ const User = () => {
   };
 
   return (
+    <div className="body">
+    <div className="navbar">
+      <div className="logo">
+        <img src={logo}></img>
+      </div>
+      {/* <div className="series">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/addProperty">Add Properties</a>
+        <a href="/Myproperty">My Properties</a>
+        <a href="/logOut">Log Out</a>
+      </div> */}
+
+    </div>
     <div className="container1">
       <div className="login">
-        <img  src={image}></img>
-        <ConnectWallet 
+        {/* <ConnectWallet 
           
-        />
+        /> */}
       </div>
       {/* <div>{isLoading ? <p>Loading...</p> : <p>user Registration: {data}</p>}</div> */}
       <div className="image-section">
-        <img src={land} alt="Your Image" />
         <div className="additional-div">
           <input
             className="input-box"
@@ -95,11 +107,15 @@ const User = () => {
             Continue
           </button>
           <p>or login with Metamask</p>
-          <button className="metamask-button" onClick={connectWallet}>
+          <button className="metamask-button" onClick={ connectWallet }>
             Metamask
+          </button>
+          <button className="metamask-button" onClick={ connectWallet }>
+            Sign In
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };
