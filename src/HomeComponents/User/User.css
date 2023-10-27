@@ -1,14 +1,24 @@
+.body{
+  background-image: url("../../land.jpg");
+  background-repeat:repeat-y;
+  background-size:contain;
+  background-position: center;
+  height: 100%;
+  display: flex;
+
+ 
+}
+
+
 .login{
     /* box-sizing: 50px;
     box-shadow: inset; */
-    width: 1450px;
+    width: 130px;
     /* border: 5px solid rgb(59, 89, 174); */
     padding: 10px;
     margin: 1%;
     display: flex;
-    gap: 750px;
-    padding-left: 250px;
-
+    margin-left: 495px;
 }
 
 .container1 {
@@ -16,7 +26,8 @@
     flex-direction: column;
     align-items: center;
     /* justify-content: center; */
-    height: 100vh; /* Adjust the height as needed */
+    height: 100%; 
+    padding-bottom: 118px;
   }
 
   .container1 .login img{
@@ -33,43 +44,80 @@
 .image-section img {
     max-width: 100%;
     max-height: 50%;
-    border: 1px solid #ccc; /* Optional border for the image */
-    border-radius: 8px; /* Optional border radius */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional box shadow */
+
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     
   }
 
-  /* Your existing styles for other elements */
 
   .additional-div {
-    background-color: #6482b3; 
+    background-color: transparent; 
+    
+    backdrop-filter: blur(4px);
+    border: 2px solid brown;
     max-width: 100%;
     max-height: 50%;
-    padding: 20px;
+    padding: 70px 105px;
     border-radius: 10px;
     text-align: center;
-    margin-top: 10px; /* Adjusted margin-top to reduce the gap */
+    margin-top: 250px;
+    
 }
   
   .input-box {
     width: 100%;
     padding: 10px;
-    border: 2px solid #ff335c; /* Energetic border color */
+    border: 2px solid #ff335c;
     border-radius: 5px;
     margin-bottom: 10px;
   }
   
   .continue-button, .metamask-button {
-    background-color: #ff5733; /* Energetic button background color */
+    background-color: brown;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-right: 10px;
+    margin: 15px 15px;
   }
   
   .continue-button:hover, .metamask-button:hover {
-    background-color: #ff4512; /* A slightly darker color on hover for an energetic effect */
+    background-color: #415B50;
+  }
+
+  .navbar{
+    background-color: brown;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar .logo img{
+    width: 150px;
+    margin-top: 20px;
+
+  }
+  .navbar .logo{
+    padding: 15px;
+  }
+
+  .navbar .series{
+    
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    padding: 25px;
+    padding-bottom: 254px;
+  }
+
+  .navbar .series a{
+    margin: 10px 20px;
+    color: aqua;
+    font-weight: bolder;
+  
   }
   
