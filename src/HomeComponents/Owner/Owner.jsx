@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import { ConnectWallet } from "@thirdweb-dev/react";
 import { useContractRead, useContract } from "@thirdweb-dev/react";
+import { useNavigate } from 'react-router-dom';
+
 
 import image from "../img.jpg";
 import land from "./owner.jpg";
-// import { useHistory } from "react-router-dom";
 
 const contractAddress = "0xf7E9f7309146Dcd6201A1a86b48499022b229a19";
 const ownerAddress = "0x14093F94E3D9E59D1519A9ca6aA207f88005918c";
 
 const Owner = () => {
-//   const history = useHistory();
   const [metamaskAddress, setMetamaskAddress] = useState("");
+  const Navigate = useNavigate();
 
   const { contract } = useContract(contractAddress);
   const { data, isLoading, error } = useContractRead(contract, "ReturnAllLandIncpectorList", ownerAddress);
@@ -27,7 +28,8 @@ const Owner = () => {
       // Here, we are just checking if it's a valid address format
       if (metamaskAddress === ownerAddress) {
         // If the user connecting the wallet is the owner, redirect to the ContractOwner page
-        window.location.href = "/contractOwner"
+        // window.location.href = "/contractOwner"
+        Navigate("/contractOwner")
       } else {
         // If it's not the owner, display an error message
         alert("You do not have permission to access the ContractOwner page.");

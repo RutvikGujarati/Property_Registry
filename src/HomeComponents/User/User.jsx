@@ -6,8 +6,8 @@ import "./User.css"
 import "./User.css";
 import { ConnectWallet } from "@thirdweb-dev/react";
 import { useContractRead , useContract } from "@thirdweb-dev/react";
-
 import land from "../../land.jpg";
+import { useNavigate } from "react-router-dom";
 // import LoginUser from "../../Components/LoginUser";
 
 const contractAddress = "0xf7E9f7309146Dcd6201A1a86b48499022b229a19";
@@ -15,6 +15,8 @@ const ownerAddress = "0x14093F94E3D9E59D1519A9ca6aA207f88005918c";
 
 const User = () => {
   // const history = useHistory();
+  const Navigate = useNavigate();
+  
   const [metamaskAddress, setMetamaskAddress] = useState("");
 
   const isOwner = metamaskAddress.toLowerCase() === ownerAddress.toLowerCase();
@@ -36,7 +38,7 @@ const User = () => {
           alert("Owners are not allowed to access the ContractOwner page.");
         }
         else{
-          window.location.href = "/loginUser" // Navigate to the next page (LoginUser)
+          Navigate("/loginUser")// Navigate to the next page (LoginUser)
 
         }
     }else{
