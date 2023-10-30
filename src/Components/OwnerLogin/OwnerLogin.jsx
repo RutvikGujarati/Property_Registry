@@ -12,7 +12,7 @@ const OwnerLogin = () => {
 
   const web3 = new Web3(window.ethereum);
 
-  const contractAddress = '0x31765C3183a1371E6F4D6542B573C1a24bCD3e9B'; // Replace with your contract address
+  const contractAddress = '0xe8Ae8d8cDc88BD818a1065a15966Bcc0F407dD2B'; // Replace with your contract address
   const ownerAddress = '0x14093F94E3D9E59D1519A9ca6aA207f88005918c'; // Replace with the owner's address
 
   const contract = new web3.eth.Contract(contractAbi, contractAddress);
