@@ -85,7 +85,40 @@
   }
   
   .continue-button:hover, .metamask-button:hover {
-    background-color: #415B50;
+    background-color: hsl(155, 17%, 31%);
+  }
+
+  .navbar{
+    background-color: brown;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar .logo img{
+    width: 150px;
+    margin-top: 20px;
+
+  }
+  .navbar .logo{
+    padding: 15px;
+  }
+
+  .navbar .series{
+    
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    padding: 25px;
+    padding-bottom: 254px;
+  }
+
+  .navbar .series a{
+    margin: 10px 20px;
+    color: aqua;
+    font-weight: bolder;
+  
   }
 
   .navbar{
