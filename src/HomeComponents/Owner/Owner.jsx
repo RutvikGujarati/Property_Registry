@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import image from "../img.jpg";
 import land from "./owner.jpg";
 
-const contractAddress = "0xe8Ae8d8cDc88BD818a1065a15966Bcc0F407dD2B";
+const contractAddress = "0xd099a2d442E629693094e7dc904Eae4aFca930Bc";
 const ownerAddress = "0x14093F94E3D9E59D1519A9ca6aA207f88005918c";
 
 const Owner = () => {

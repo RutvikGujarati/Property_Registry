@@ -10,6 +10,7 @@ import Owner from "./HomeComponents/Owner/Owner"
 import About from "./HomeComponents/About/About"
 import UserLogin from "./Components/UserLogin/UserLogin";
 import RegisterUser from "./HomeComponents/UserRegistration/RegisterUser";
+import AddProperty from "./Components/Property/AddProperty";
 // import Test from "./Components/test";
 
 export default function Home() {
@@ -25,7 +26,10 @@ export default function Home() {
     {/* <Route path="/Home" element={<Window />} /> */}
     <Route path="/contractOwner" element={<OwnerLogin />} />
     <Route path="/about" element={<About />} />
+    
     <Route path="/userLogin" element={<UserLogin />} />
+    <Route path="/dashboard" element={<UserLogin />} />
+    <Route path="/addProperty" element={<AddProperty />} />
 
     {/* <Route path="/Test" element={<Test />} /> */}
 

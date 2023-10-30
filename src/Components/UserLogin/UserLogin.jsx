@@ -2,6 +2,9 @@ import { Web3Button , useAddress} from '@thirdweb-dev/react'
 import React, { useState } from 'react'
 import abi from "../LandAbi.json"
 import Web3 from 'web3'
+import logo from "../../HomeComponents/estd.png"
+import "../../HomeComponents/User/User.css"
+import {Link} from "react-router-dom/dist"
 
 // import { contract } from 'web3/lib/commonjs/eth.exports'
 
@@ -10,55 +13,84 @@ const UserLogin = () => {
   const [userList, setUserList] = useState("");
   const [isLoading , setIsLoading] =useState(true);
 
-  const contractAddress = "0xe8Ae8d8cDc88BD818a1065a15966Bcc0F407dD2B"; 
+  const contractAddress = "0xd099a2d442E629693094e7dc904Eae4aFca930Bc"; 
   const contractAbi = abi;
+
   const fetchUserList = async () => {
-    setIsLoading(true);
+  setIsLoading(true);
 
-    try {
-      const web3 = new Web3(window.ethereum);
-      const contract = new web3.eth.Contract(contractAbi, contractAddress);
+  try {
+    const web3 = new Web3(window.ethereum);
+    const contract = new web3.eth.Contract(contractAbi, contractAddress);
 
-      // Assuming your contract has a function named "ReturnAllUserList" to fetch user details
-      const userAddresses = await contract.methods.ReturnAllUserList().call();
+    // Assuming your contract has a function named "ReturnAllUserList" to fetch user details
+    const userAddresses = await contract.methods.ReturnAllUserList().call();
 
-      const userDetails = [];
+    // Use Promise.all to concurrently fetch user details for all addresses
+    const userDetailsPromises = userAddresses.map(async (userAddress) => {
+      const userDetail = await contract.methods.UserMapping(userAddress).call();
+      return userDetail;
+    });
 
-      for (const userAddress of userAddresses) {
-        // Call UserMapping to get user details for each address
-        const userDetail = await contract.methods.UserMapping(userAddress).call();
-        userDetails.push(userDetail);
-      }
-      
-      // "result" should contain an array of user details
-      setUserList(userDetails);
+    // Wait for all the promises to resolve and get the user details
+    const userDetails = await Promise.all(userDetailsPromises);
 
-      setIsLoading(false);
-    } catch (error) {
-      console.error("Error fetching user list:", error);
-      setIsLoading(false);
-    }
-  };
+    // "userDetails" now contains an array of user details
+    setUserList(userDetails);
+
+    setIsLoading(false);
+  } catch (error) {
+    console.error("Error fetching user list:", error);
+    setIsLoading(false);
+  }
+};
+
 
   return (
-    <div>
+    <>
+     <div className="body">
+    <div className="navbar">
+      <div className="logo">
+        <img src={logo}></img>
+      </div>
+      <div className="series">
+  
+        <Link to="/dashboard">Dashboard</Link>
+      
+        <Link to="/addProperty">Add Properties</Link>
+        <a href="/MyProperty">My Properties</a>
+        <a href="/">Log Out</a>
+      
+      </div>
+
+    </div>
+    <div className="container1">
+      <div className="login">
+        {/* <ConnectWallet 
+          
+        /> */}
+      </div>
+      {/* <div>{isLoading ? <p>Loading...</p> : <p>user Registration: {data}</p>}</div> */}
+      <div className="image-section">
+        <div className="additional-div">
+       
      <Web3Button
-        contractAddress="0xe8Ae8d8cDc88BD818a1065a15966Bcc0F407dD2B"
+        contractAddress="0xd099a2d442E629693094e7dc904Eae4aFca930Bc"
         contractAbi={contractAbi} 
         action={fetchUserList}
         
         //ReturnAllUserList
-        >Fetch users</Web3Button>
+        >Profile</Web3Button>
          {isLoading ? (
-        <p>Loading user list...</p>
+        <p></p>
       ) : (
         <ul>
           {userList.map((user, index) => (
             <li key={index}>
               <strong>Name: </strong>{user.name}
               <br />
-             <strong>Age: </strong>{user.age}
-             <br />
+             {/* <strong>Age: </strong>{user.age}
+             <br /> */}
              <strong>City:</strong>{user.city}
              <br />
              <strong>AadharNumber:</strong>{user.aadharNumber}
@@ -70,7 +102,13 @@ const UserLogin = () => {
           ))}
         </ul>
       )}
+        </div>
+      </div>
+    </div>
+    </div>
+    <div>
   </div>
+  </>
   )
 }
 

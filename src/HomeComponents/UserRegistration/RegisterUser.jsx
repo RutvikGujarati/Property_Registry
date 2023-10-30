@@ -53,7 +53,7 @@ const RegisterUser = () => {
     setEmail("");
   }
 
-  const contractAddress = "0xe8Ae8d8cDc88BD818a1065a15966Bcc0F407dD2B"; // Replace with your contract address
+  const contractAddress = "0xd099a2d442E629693094e7dc904Eae4aFca930Bc"; // Replace with your contract address
 
   const fetchUserList = async () => {
     setIsLoading(true);
@@ -183,7 +183,7 @@ const RegisterUser = () => {
 
         {/* <button className="submit-button" onClick={handleRegistration}>Submit</button> */}
         <Web3Button
-        contractAddress="0xe8Ae8d8cDc88BD818a1065a15966Bcc0F407dD2B"
+        contractAddress="0xd099a2d442E629693094e7dc904Eae4aFca930Bc"
         contractAbi={contractAbi}
         action={(contract)=> contract.call(
           "registerUser",
@@ -209,7 +209,7 @@ const RegisterUser = () => {
       {/* </div> */}
       <div>
         <Web3Button
-        contractAddress="0xe8Ae8d8cDc88BD818a1065a15966Bcc0F407dD2B"
+        contractAddress="0xd099a2d442E629693094e7dc904Eae4aFca930Bc"
         contractAbi={contractAbi} 
         action={fetchUserList}
         
@@ -223,8 +223,8 @@ const RegisterUser = () => {
             <li key={index}>
               <strong>Name: </strong>{user.name}
               <br />
-             <strong>Age: </strong>{user.age}
-             <br />
+             {/* <strong>Age: </strong>{user.age}
+             <br /> */}
              <strong>City:</strong>{user.city}
              <br />
              <strong>AadharNumber:</strong>{user.aadharNumber}
