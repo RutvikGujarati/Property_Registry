@@ -110,6 +110,10 @@ const LoginUser = () => {
               <img src={image}></img>
           </div>
 
+          <div className='heading'>
+            <h1>Register Yourself:</h1>
+          </div>
+
       <div className="container">
         <div className="input-container">
           <input  className="input-box" type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
