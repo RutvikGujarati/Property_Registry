@@ -1,24 +1,35 @@
 /* Style for the form container */
 .container {
+  position: absolute;
+  width: 500px;
     display: flex;
+    left: 380px;
+    top: 110px;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0 auto;
+    background-color: transparent;
+    backdrop-filter: blur(2px);
+
+  }
+
+  .body .back img{
+    position: relative;
+    height: 745px;
+    width: 1356px;
   }
   
   /* Style for the input field container */
   .input-container {
-    width: 50%; /* Allow flexible width */
+    width: 100%; /* Allow flexible width */
     margin-bottom: 20px;
   }
   
   /* Style for the input field */
   .input-box {
-    width: 100%; /* Takes the full width of the container */
+    background-color: #ffffff;
+    color: gray;
     padding: 12px;
-    border: 2px solid #007BFF;
+    border: 2px solid brown;
     border-radius: 5px;
     font-size: 16px;
     outline: none;
@@ -30,10 +41,12 @@
   
   /* Style for the submit button */
   .submit-button {
-    width: auto; /* Allow flexible width */
-    background-color: #007BFF;
+    width: 100px; /* Allow flexible width */
+    background-color: brown;
     color: white;
     padding: 12px 20px;
+    margin-left: 180px;
+    text-align: center;
     border: none;
     border-radius: 5px;
     font-size: 18px;
@@ -42,6 +55,6 @@
   }
   
   .submit-button:hover {
-    background-color: #0056b3; /* Darker color on hover */
+    background-color: #415B50;
   }
   
