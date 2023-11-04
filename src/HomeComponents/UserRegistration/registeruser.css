@@ -18,6 +18,15 @@
     width: 1356px;
   }
   
+  .body .heading {
+    position: absolute;
+    left: 400px;
+    top: 40px;
+    z-index: 2;
+    color: brown;
+    font-size: large;
+  }
+
   /* Style for the input field container */
   .input-container {
     width: 100%; /* Allow flexible width */
